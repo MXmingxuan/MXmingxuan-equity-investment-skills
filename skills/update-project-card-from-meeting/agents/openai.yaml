@@ -1,0 +1,7 @@
+interface:
+  display_name: "Update Project Card from Meeting"
+  short_description: "将会后会议和新增材料准确写回项目卡与问题状态"
+  default_prompt: "Use $update-project-card-from-meeting to update the project card and question statuses from the supplied meeting materials."
+
+policy:
+  allow_implicit_invocation: true

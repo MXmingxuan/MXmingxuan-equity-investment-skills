@@ -1,0 +1,9 @@
+# Local/private project materials and generated case outputs
+/outputs/
+/*.pdf
+/ChatGPT-*.md
+
+# Local tooling and operating-system files
+.DS_Store
+__pycache__/
+*.pyc

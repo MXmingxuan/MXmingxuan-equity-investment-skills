@@ -1,0 +1,7 @@
+interface:
+  display_name: "Due Diligence Intake & Request List"
+  short_description: "立项通过后制定定制化尽调范围与资料清单"
+  default_prompt: "Use $due-diligence-intake-and-request-list to prepare a tailored due-diligence starting package from the current project materials, including workstreams, prioritized requests, acceptance criteria, and first-round verification tasks."
+
+policy:
+  allow_implicit_invocation: true

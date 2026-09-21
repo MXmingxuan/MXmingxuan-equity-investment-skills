@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Intake, Questions & Interview Guide"
+  short_description: "从BP生成项目卡、问题清单和首次访谈提纲"
+  default_prompt: "Use $project-intake-and-project-card to read the supplied project materials and create a project card, prioritized question list, and first-meeting interview guide."
+
+policy:
+  allow_implicit_invocation: true
