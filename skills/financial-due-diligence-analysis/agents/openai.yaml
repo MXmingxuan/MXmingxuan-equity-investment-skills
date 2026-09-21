@@ -1,7 +1,7 @@
 interface:
   display_name: "Financial Due Diligence Analysis"
   short_description: "基于财务数据做尽调分析与异常识别"
-  default_prompt: "Use $financial-due-diligence-analysis to analyze the supplied financial data, check data quality, calculate supported metrics, flag anomalies, and list the evidence or professional review still needed."
+  default_prompt: "请使用 $financial-due-diligence-analysis 分析财务数据、更新问题与投资影响台账、检查数据质量、计算有依据的指标并列出仍需补充的证据或专业复核。最终面向用户的分析和报告默认使用简体中文。"
 
 policy:
   allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Financial Forecast & Valuation"
+  short_description: "把尽调假设转成财务预测、估值和退出收益模型"
+  default_prompt: "请使用 $financial-forecast-and-valuation 根据项目证据和假设建立分阶段财务预测、估值区间、持股变化和退出收益情景，并保留来源、不确定性和缺失输入。最终面向用户的分析和报告默认使用简体中文。"
+
+policy:
+  allow_implicit_invocation: true

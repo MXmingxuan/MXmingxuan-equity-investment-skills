@@ -1,7 +1,7 @@
 interface:
   display_name: "Project Initiation Research and Memo"
   short_description: "持续研究立项依据并管理资料缺口"
-  default_prompt: "Use $project-initiation-research-and-memo to research the project iteratively, track evidence gaps, and update the initiation report."
+  default_prompt: "请使用 $project-initiation-research-and-memo 对项目进行迭代研究、跟踪证据缺口并更新立项研究报告。最终面向用户的研究和报告默认使用简体中文。"
 
 policy:
   allow_implicit_invocation: true

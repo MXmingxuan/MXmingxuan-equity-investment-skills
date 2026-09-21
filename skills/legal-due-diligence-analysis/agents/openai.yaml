@@ -1,0 +1,7 @@
+interface:
+  display_name: "Legal Due Diligence Analysis"
+  short_description: "基于资料包整理法律风险与律师复核事项"
+  default_prompt: "请使用 $legal-due-diligence-analysis 整理法律尽调材料、更新问题与投资影响台账、梳理主体和权利、识别缺失证据与矛盾，并准备律师复核台账。最终面向用户的分析和报告默认使用简体中文。"
+
+policy:
+  allow_implicit_invocation: true

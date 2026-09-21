@@ -5,9 +5,11 @@ description: "Use when an investment project has a project card, BP, meeting upd
 
 # Project Initiation Research and Memo
 
-## Purpose
-
 Use this as an iterative research workspace, not a one-shot report generator. The goal is to determine whether a project has enough evidence to enter formal due diligence or whether specific information must first be searched for or requested from the user/project team.
+
+## 输出语言
+
+默认当前立项研究报告、资料需求清单、研究摘要、状态、结论和下一步均使用简体中文。用户明确要求其他语言时才切换。公司/人名、官方机构和产品名、文件名、URL、代码、公式、JSON/YAML键、稳定ID和必要的专业缩写可以保留原文；首次出现的专业缩写要附中文释义。机器可读字段或状态值可以保留英文，但旁边必须有中文说明；若 JSON 或表格也直接面向用户，必须同时提供对应的中文显示值或中文说明。原始材料或外部来源的直接引文可保留原语言，但 Agent 的研究分析和建议必须使用中文。
 
 This is preliminary investment research. It is not a substitute for commercial, financial, legal, tax, technical, or regulatory due diligence, and it must not present a preliminary view as an investment approval.
 

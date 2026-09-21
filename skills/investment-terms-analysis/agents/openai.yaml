@@ -1,0 +1,7 @@
+interface:
+  display_name: "Investment Terms Analysis"
+  short_description: "把尽调风险、估值和收益映射到投资条款"
+  default_prompt: "请使用 $investment-terms-analysis 根据尽调问题台账、估值/收益模型、交易假设和法律材料编制有来源链接的投资条款工作包，并区分候选保护措施与律师最终确认的条款。最终面向用户的分析和报告默认使用简体中文。"
+
+policy:
+  allow_implicit_invocation: true

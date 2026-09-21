@@ -1,0 +1,7 @@
+interface:
+  display_name: "Commercial Due Diligence Analysis"
+  short_description: "拆解商业模式并验证市场、客户与竞争假设"
+  default_prompt: "请使用 $commercial-due-diligence-analysis 分析商业证据、更新尽调问题与投资影响台账、拆解商业模式并验证市场和客户假设。最终面向用户的分析和报告默认使用简体中文。"
+
+policy:
+  allow_implicit_invocation: true

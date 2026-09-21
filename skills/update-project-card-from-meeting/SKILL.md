@@ -5,9 +5,11 @@ description: "Use when new meeting notes, transcripts, answers, data, commitment
 
 # Update Project Card from Meeting
 
-## Purpose
-
 Incrementally update an existing investment workspace after a project-team conversation. The primary deliverable must be named **更新后的项目卡**. Also return **问题状态更新**, **本次变更摘要**, and **新增/未闭环事项**. This is an evidence-reconciliation workflow, not a meeting-summary-only workflow.
+
+## 输出语言
+
+默认**更新后的项目卡**、问题状态更新、变更摘要、新增事项和未闭环事项均使用简体中文。用户明确要求其他语言时才切换。公司/人名、官方机构和产品名、文件名、URL、代码、公式、JSON/YAML键、稳定ID和必要的专业缩写可以保留原文；首次出现的专业缩写要附中文释义。机器可读字段或状态值可以保留英文，但旁边必须有中文说明；若 JSON 或表格也直接面向用户，必须同时提供对应的中文显示值或中文说明。会议原话可保留原语言，但 Agent 的更新、判断和问题状态说明必须使用中文。
 
 ## Required inputs
 

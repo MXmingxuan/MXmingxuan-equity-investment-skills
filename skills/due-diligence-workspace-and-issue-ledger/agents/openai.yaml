@@ -1,0 +1,7 @@
+interface:
+  display_name: "Due Diligence Workspace & Issue Ledger"
+  short_description: "统一维护尽调问题、风险与投资影响"
+  default_prompt: "请使用 $due-diligence-workspace-and-issue-ledger 同步尽调证据、问题、跨领域矛盾，以及估值、投资条款和投决会所需的下游输入。面向用户的摘要和解释默认使用简体中文。"
+
+policy:
+  allow_implicit_invocation: true

@@ -5,9 +5,11 @@ description: "Use when receiving a BP or other project-introduction material in 
 
 # Project Intake, Question List & Interview Guide
 
-## Purpose
-
 Turn supplied project materials into one coherent initial-review package: a source-grounded project card, a prioritized question list, and a semi-structured first-meeting interview guide. All three outputs must come from the same semantic understanding of the original materials. This is an Agent reasoning workflow, not a keyword parser or a deterministic data-extraction script.
+
+## 输出语言
+
+默认项目卡、问题清单、访谈提纲、证据说明、限制和下一步均使用简体中文。用户明确要求其他语言时才切换。公司/人名、官方机构和产品名、文件名、URL、代码、公式、JSON/YAML键、稳定ID和必要的专业缩写可以保留原文；首次出现的专业缩写要附中文释义。机器可读字段或状态值可以保留英文，但旁边必须有中文说明；若 JSON 或表格也直接面向用户，必须同时提供对应的中文显示值或中文说明。原始BP或其他材料的直接引文可保留原语言，但 Agent 的整理、判断和问题必须使用中文。
 
 ## Boundary
 

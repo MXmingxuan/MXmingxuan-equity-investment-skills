@@ -6,7 +6,7 @@ Use this reference when the analysis requires a structured data model, a ratio c
 
 ```yaml
 workspace_type: financial_due_diligence_analysis
-workspace_version: "1.0"
+workspace_version: "1.1"
 project_id: ""
 as_of_date: ""
 entity_scope: ""
@@ -17,6 +17,7 @@ currency: ""
 unit_scale: yuan | thousand | million | other | unknown
 accounting_basis: gaap | ifrs | tax_basis | management_basis | unknown
 source_status: audited | reviewed | management_prepared | manually_entered | forecast | mixed | unknown
+shared_issue_ledger_ref: ""
 ```
 
 Never combine values with different currency, unit scale, entity scope, or accounting basis without an explicit conversion and a traceable note. If the period is not stated, mark the data as incomplete.
@@ -86,21 +87,46 @@ A failed check is a request for explanation or evidence, not an automatic findin
 
 ## 5. Anomaly register
 
+Every material anomaly must also be represented in the shared issue ledger. Use the common fields below and keep these financial fields as extensions.
+
 Use one record per signal:
 
 ```yaml
 anomaly_id: ANOM-001
+issue_id: FIN-ISSUE-001
+domain: financial
+issue_type: question | evidence_gap | finding | conflict | assumption | adjustment | decision_item
 category: trend | mix | concentration | working_capital | cash_conversion | one_off | related_party | debt_liquidity | forecast_variance | data_integrity
+title: "Short issue title"
 priority: P0 | P1 | P2
 observation: "What the supplied data shows"
+question_or_observation: "What remains unknown, observed, or conflicting"
 comparison_base: "Prior period, plan, segment, or stated benchmark"
 evidence_refs: []
+evidence_types: []
+source_date_or_period: ""
+entity_or_scope: ""
+confidence: low | medium | high | unknown
+materiality: low | medium | high | unknown
 possible_explanations: []
 what_it_does_not_prove: ""
-decision_impact: ""
+required_resolution: "What evidence or human review would close this issue"
 next_evidence: []
 owner: company | investor | accountant | auditor | tax_adviser | agent | unknown
-status: open | explanation_requested | independently_checked | resolved | deferred_with_reason
+status: not_started | evidence_requested | partially_supported | management_claim_only | under_review | conflicting | needs_professional_review | needs_human_validation | decision_ready | resolved | accepted_with_protection | deferred_with_reason
+linked_issue_ids: []
+downstream_consumers: [valuation | investment_terms | investment_decision | post_close_monitoring]
+investor_impact:
+  investability: go_no_go | wait_for_resolution | no_current_blocker | unknown
+  valuation_effect: none_identified | possible_discount | possible_revaluation | input_needs_rework | unknown
+  structure_effect: price | ownership | instrument | investment_amount | closing_sequence | consent | financing_milestone | unknown | none_identified
+  closing_effect: condition_precedent_candidate | closing_deliverable_candidate | no_current_effect | unknown
+  terms_effect: representation_warranty | indemnity | escrow_or_holdback | covenant | governance_right | information_right | founder_key_person_commitment | other | none_identified | unknown
+  post_close_effect: monitor | remediation | reporting | milestone | none_identified | unknown
+  rationale: ""
+human_review_route: investor | accountant | auditor | tax_adviser | lawyer | technical_expert | other
+professional_review_status: not_requested | requested | in_progress | completed | not_applicable
+change_log: []
 ```
 
 Prioritize by materiality, persistence, reversibility, cash/valuation impact, and proximity to the investment thesis. Do not call a number “abnormal” solely because it crosses a memorized ratio threshold.
@@ -122,6 +148,7 @@ recurrence_assessment: recurring | non_recurring_claim | uncertain
 cash_effect: cash | non_cash | mixed | unknown
 confidence: high | medium | low
 professional_review: not_requested | requested | completed
+linked_issue_ids: []
 ```
 
 An adjustment is not accepted merely because management calls it one-off. Require evidence, explain the economic substance, show the impact on EBITDA/cash/valuation if relevant, and flag professional review.
@@ -141,6 +168,9 @@ An adjustment is not accepted merely because management calls it one-off. Requir
   "scenarios": [],
   "open_requests": [],
   "human_review_items": [],
+  "issues": [],
+  "reconciliations": [],
+  "downstream_feeds": [],
   "status": "data_incomplete",
   "change_log": []
 }

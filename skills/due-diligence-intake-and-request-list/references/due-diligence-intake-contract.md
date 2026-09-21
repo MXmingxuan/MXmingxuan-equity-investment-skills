@@ -6,7 +6,7 @@ Use this reference when the intake requires a detailed request schema, a structu
 
 ```yaml
 workspace_type: due_diligence_intake
-workspace_version: "1.0"
+workspace_version: "1.1"
 project_id: ""
 as_of_date: ""
 starting_gate: approved_for_formal_diligence | preparing_conditionally | awaiting_initiation_condition | unknown
@@ -20,6 +20,7 @@ investment_thesis: []
 selected_workstreams: []
 excluded_workstreams: []
 material_caveats: []
+shared_issue_ledger_ref: ""
 ```
 
 Do not infer instrument, ticket, ownership, or close timing from a BP unless the source clearly says so. A missing value is a decision-context gap, not permission to invent one.
@@ -121,8 +122,14 @@ When JSON is requested, keep the full request list and state synchronized:
   "first_round_tasks": [],
   "unresolved_items": [],
   "gates": [],
+  "issues": [],
+  "reconciliations": [],
+  "downstream_feeds": [],
+  "human_review_items": [],
   "change_log": []
 }
 ```
 
 `decision_questions` should link to request IDs. `unresolved_items` should preserve the original claim, source, conflict or gap, impact, owner, and resolution condition. `change_log` should record newly received documents, changed statuses, closed items, and newly discovered contradictions; never overwrite the earlier state without a trace.
+
+`issues`, `reconciliations`, `downstream_feeds`, and `human_review_items` must follow the shared contract in `due-diligence-workspace-and-issue-ledger`. The intake skill initializes them; domain skills update them.

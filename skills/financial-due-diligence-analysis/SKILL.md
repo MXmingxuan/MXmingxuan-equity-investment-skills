@@ -5,9 +5,13 @@ description: "Use when an investment project has financial statements, ledgers, 
 
 # Financial Due Diligence Analysis
 
-## Purpose
-
 Help an investor analyze supplied financial evidence during due diligence. The Agent can organize data, calculate transparent metrics, reconcile related figures, surface unusual patterns, test forecast assumptions, and prepare questions and follow-up requests. It is an analysis and evidence-management workflow, not an audit or an accounting opinion.
+
+## 输出语言
+
+默认所有面向用户的报告、分析、表格标题、字段显示名、问题、结论、建议、警示和解释均使用简体中文。用户明确要求其他语言时才切换。公司/人名、官方机构和产品名、文件名、URL、代码、公式、JSON/YAML键、稳定ID，以及必要的专业缩写（如 DCF、EBITDA、IRR、MOIC）可以保留原文；首次出现的专业缩写要附中文释义。机器可读字段或状态值可以保留英文，但旁边必须有中文说明；若 JSON 或表格也直接面向用户，必须同时提供对应的中文显示值或中文说明。原始材料引文可保留原语言，Agent 的分析和结论必须使用中文。
+
+**REQUIRED SHARED CONTRACT:** Use [due-diligence-workspace-and-issue-ledger](../due-diligence-workspace-and-issue-ledger/SKILL.md) for stable issue IDs, evidence lifecycle, cross-domain reconciliation, investment-impact fields, downstream feeds, and change history. Financial anomalies and adjustments are domain evidence; they are not a separate decision ledger.
 
 ## Boundary
 
@@ -43,6 +47,8 @@ If a financial dataset is missing or too thin, use [references/financial-data-en
 8. **Stress the forward view.** Compare forecast assumptions with historical conversion, capacity, pricing, margin, working capital, and cash needs. Produce scenario ranges only from explicit assumptions; do not turn a scenario into a prediction.
 9. **Write the follow-up package.** Convert every material gap or unexplained variance into a financial question, evidence request, owner, status, and acceptance criterion. Update the shared due-diligence workspace when one exists.
 10. **Self-audit.** Check that no result depends on an unmarked assumption, no unsupported precision is shown, every material number is traceable, and professional judgment is routed to an accountant, auditor, tax adviser, lawyer, technical expert, or investor as appropriate.
+11. **Maintain the shared investment-impact ledger.** Convert each material anomaly, data-quality failure, disputed adjustment, debt-like item, forecast dependency, or cash-need finding into a shared issue record or link it to an existing cross-domain issue. Separately record effects on investability, valuation, transaction structure, closing, investor-protection terms, and post-close monitoring; use `unknown` where the data does not support a conclusion.
+12. **Prepare downstream decision inputs.** Produce traceable feeds for valuation, investment terms, and the investment committee, including normalized revenue/EBITDA/FCF ranges, debt-like items, working-capital adjustments, financing need/runway, forecast-confidence constraints, and conditions for relying on the data. Link every feed to issue IDs and assign a human owner.
 
 ## Evidence labels and status
 
@@ -70,7 +76,9 @@ Return these sections in order. Use [references/financial-analysis-contract.md](
 5. **营运资本、负债与资金需求** — AR/AP/inventory, cash conversion, debt/guarantees, capex, financing need, and downside cash runway.
 6. **异常与待核验事项** — evidence-linked anomaly register with priority, possible explanations, impact, owner, and next evidence.
 7. **财务资料补充清单与人工复核建议** — missing data, acceptable evidence, calculation template fields, and items for accountant/auditor/tax adviser/investor review.
-8. **当前财务尽调状态** — one of `not_started`, `data_incomplete`, `calculable_with_caveats`, `under_review`, `needs_management_explanation`, `needs_professional_review`, or `ready_for_investor_review`, with the reason and next smallest action.
+8. **当前财务尽调问题与投资影响台账** — shared issue IDs, anomaly/adjustment links, evidence quality, status, resolution condition, and separate impact on investability, valuation, structure, closing, terms, and post-close monitoring.
+9. **财务尽调下游决策输入** — traceable financial ranges, sensitivities, constraints, and unresolved questions for valuation, investment terms, and the investment committee.
+10. **当前财务尽调状态** — one of `not_started`, `data_incomplete`, `calculable_with_caveats`, `under_review`, `needs_management_explanation`, `needs_professional_review`, or `ready_for_investor_review`, with the reason and next smallest action.
 
 If structured output is supported, also maintain the JSON workspace in the reference. Markdown and JSON must agree on periods, values, status, anomalies, adjustments, and open requests.
 
